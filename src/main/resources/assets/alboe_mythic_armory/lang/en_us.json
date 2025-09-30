@@ -1,0 +1,28 @@
+{
+  "itemGroup.alboe_mythic_armory.weapons": "Alboe Mythic Armory",
+
+  "COMMENT_LINE_1": "--------------- ITEMS ---------------",
+  "item.alboe_mythic_armory.divinity_shrapnel": "Divinity Shrapnel",
+
+  "COMMENT_LINE_2": "--------------- WEAPON NAMES ---------------",
+  "item.alboe_mythic_armory.ironfang": "Iron Fang",
+
+  "COMMENT_LINE_3": "--------------- ITEM DESCRIPTIONS ---------------",
+  "tooltip_info_item.alboe_mythic_armory.divinity_shrapnel_1": "Used to upgrade Divine Weapons, or\\nmake crafted weapons feel anew.\\nThe weapons we fight with...are not the\\nweapons of this world...",
+
+  "tooltip_info_item.alboe_mythic_armory.ironfang_1": "Tootip thingy",
+
+  "tooltip_info_item.alboe_mythic_armory.shadowfang_1": "Tootip thingy",
+
+  "COMMENT_LINE_4": "--------------- DIVINE EFFECTS AND DESCRIPTIONS ---------------",
+  "tooltip_info_item.alboe_mythic_armory.ironfang_divine_effect.name_1": "Divine Effect: Thingy",
+  "tooltip_info_item.alboe_mythic_armory.ironfang_divine_effect.name_1.description_1": "Description thingy",
+  "tooltip_info_item.alboe_mythic_armory.ironfang_divine_effect.name_1.description_2": "Moar description",
+
+  "tooltip_info_item.alboe_mythic_armory.ironfang_divine_effect.name_2": "Divine Effect: Other Thingy",
+  "tooltip_info_item.alboe_mythic_armory.ironfang_divine_effect.name_2.description_1": "Other description thingy",
+  "tooltip_info_item.alboe_mythic_armory.ironfang_divine_effect.name_2.description_2": "Even moar description"
+
+
+
+}

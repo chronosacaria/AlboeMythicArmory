@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "alboe_mythic_armory",
+  "version": "${version}",
+  "name": "Alboe Mythic Armory",
+  "description": "A Minecraft Mod which adds weapons for the ALBOE modpack.",
+  "authors": ["Timefall Development", "Chronosacaria"],
+  "contact": {
+    "homepage": "",
+    "sources": "https://github.com/TimefallDevelopment/AlboeMythicArmory",
+    "issues": "https://github.com/TimefallDevelopment/AlboeMythicArmory/issues"
+  },
+  "license": "MIT",
+  "icon": "assets/alboe_mythic_armory/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "dev.timefall.alboemythicarmory.client.AlboeMythicArmoryDataGenerator"
+    ],
+    "client": [
+      "dev.timefall.alboemythicarmory.client.AlboeMythicArmoryClient"
+    ],
+    "main": [
+      "dev.timefall.alboemythicarmory.AlboeMythicArmory"
+    ]
+  },
+  "mixins": [
+    "alboe_mythic_armory.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}",
+    "fzzy_config": ">=${fzzy_config_version}"
+  }
+}
