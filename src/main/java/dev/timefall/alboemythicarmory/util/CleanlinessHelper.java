@@ -3,6 +3,7 @@ package dev.timefall.alboemythicarmory.util;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.resource.language.I18n;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -10,11 +11,13 @@ import net.minecraft.item.ToolMaterial;
 import net.minecraft.registry.Registries;
 import net.minecraft.text.Style;
 import net.minecraft.text.Text;
+import net.minecraft.util.math.random.Random;
 
 import java.text.DecimalFormat;
 import java.util.List;
 
 public class CleanlinessHelper {
+    private static final Random RANDOM = Random.create();
 
     /*
      * TOOLTIP HELPER METHODS
@@ -90,6 +93,26 @@ public class CleanlinessHelper {
 
     public static float alboe_mystic_armory$calculateAttackRange(float desiredAttackRange) {
         return desiredAttackRange - 2.5f;
+    }
+
+    public static int alboe_mystic_armory$calculateTicksFromSeconds(int seconds) {
+        return Math.multiplyExact(20, seconds);
+    }
+
+    public static boolean percentToOccur(int chance) {
+        return RANDOM.nextInt(100) < chance;
+    }
+
+    /**
+     * Checks if a living entity has any armor equipped in any slot.
+     * @param entity The living entity to check
+     * @return true if the entity has any armor equipped, false otherwise
+     */
+    public static boolean hasAnyArmorEquipped(LivingEntity entity) {
+        return !entity.getEquippedStack(EquipmentSlot.HEAD).isEmpty()
+                || !entity.getEquippedStack(EquipmentSlot.CHEST).isEmpty()
+                || !entity.getEquippedStack(EquipmentSlot.LEGS).isEmpty()
+                || !entity.getEquippedStack(EquipmentSlot.FEET).isEmpty();
     }
 
     /**
