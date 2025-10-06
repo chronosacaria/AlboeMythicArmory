@@ -1,5 +1,6 @@
 package dev.timefall.alboemythicarmory.client;
 
+import dev.timefall.alboemythicarmory.registry.ParticleRegistry;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -9,5 +10,7 @@ public class AlboeMythicArmoryClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
+        ParticleRegistry.registerClient();
+        ClientParticleHandlerRegistry.register();
     }
 }

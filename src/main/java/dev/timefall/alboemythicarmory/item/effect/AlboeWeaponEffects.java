@@ -1,9 +1,10 @@
 package dev.timefall.alboemythicarmory.item.effect;
 
 import dev.timefall.alboemythicarmory.registry.ItemRegistry;
-import dev.timefall.alboemythicarmory.util.AttackDamageStorage;
-import dev.timefall.alboemythicarmory.util.CleanlinessHelper;
-import dev.timefall.alboemythicarmory.util.UUIDHelper;
+import dev.timefall.alboemythicarmory.util.helper.CleanlinessHelper;
+import dev.timefall.alboemythicarmory.util.helper.EntityEffectHelper;
+import dev.timefall.alboemythicarmory.util.helper.UUIDHelper;
+import dev.timefall.alboemythicarmory.util.statemanager.AttackDamageStorage;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttributeInstance;
@@ -76,15 +77,7 @@ public class AlboeWeaponEffects {
         }
     }
     public static float alboe_mystic_armory$echoEdgeStoredDamage(DamageSource damageSource, float damage, LivingEntity targetEntity) {
-        System.out.println("=== DAMAGE DEBUG ===");
-        System.out.println("Target: " + targetEntity.getName().getString() +
-                " | Health: " + targetEntity.getHealth() + "/" + targetEntity.getMaxHealth());
-        System.out.println("Initial damage: " + damage);
-
-        if (!(damageSource.getAttacker() instanceof LivingEntity attackingEntity)) {
-            System.out.println("No attacking entity or not a living entity wielding an Echo Edge; skipping Echo Edge logic");
-            return damage;
-        }
+        if (!(damageSource.getAttacker() instanceof LivingEntity attackingEntity)) return damage;
 
         if (attackingEntity.getEquippedStack(EquipmentSlot.MAINHAND).isOf(ItemRegistry.ECHO_EDGE.get())) {
             if (!AttackDamageStorage.isFirstAttack(attackingEntity)) {
@@ -93,10 +86,6 @@ public class AlboeWeaponEffects {
 
                 if (hasStoredDamage) {
                     AttackDamageStorage.clearStoredDamage(attackingEntity);
-
-                    System.out.println("Applying stored damage: " + storedDamage);
-                    System.out.println("Total damage before stored: " + damage);
-
                     damage += storedDamage;
                 }
             }
@@ -104,19 +93,59 @@ public class AlboeWeaponEffects {
             if (damage > 0.0F) {
                 float damageToStore = damage * 0.25f;
                 AttackDamageStorage.storeDamage(attackingEntity, damageToStore);
-                System.out.println("Storing damage for next attack: " + damageToStore);
             }
-
-            System.out.println("Final damage being applied: " + damage);
-            System.out.println("Target health after damage: " +
-                    (targetEntity.getHealth() - damage) + "/" + targetEntity.getMaxHealth());
-            System.out.println("=================");
 
             return damage;
         }
 
-        System.out.println("Not holding Echo Edge, using normal damage: " + damage);
-        System.out.println("=================");
+        return damage;
+    }
+
+    public static float handleIronfangAttack(DamageSource damageSource, float damage, LivingEntity targetEntity) {
+        /* TODO Break out checks for the Ironfang attack into smaller pieces for easy editing later
+         *  Section 1: Mark Entity Logic
+         *  Section 2: Stun Entity Logic
+         *  Section 3: Clear Stored Values
+         *  *** Make sure to remove Debugging Outputs ***
+         */
+
+
+        if (!(damageSource.getAttacker() instanceof LivingEntity attacker)) {
+            return damage;
+        }
+
+        if (!attacker.getEquippedStack(EquipmentSlot.MAINHAND).isOf(ItemRegistry.IRONFANG.get())) {
+            return damage;
+        }
+
+        if (AttackDamageStorage.isFirstAttack(attacker)) {
+            if (!EntityEffectHelper.isEntityMarked(targetEntity)) {
+                EntityEffectHelper.markEntity(targetEntity, 100);
+                System.out.println("Marked " + targetEntity.getName().getString() + " for stun");
+            }
+            AttackDamageStorage.storeDamage(attacker, 0);
+            return damage;
+        }
+
+        if (EntityEffectHelper.isEntityMarked(targetEntity)) {
+            EntityEffectHelper.unmarkEntity(targetEntity);
+            System.out.println(targetEntity.getName().getString() + " is no longer marked.");
+            EntityEffectHelper.stunEntity(targetEntity, 60);
+            System.out.println(targetEntity.getName().getString() + " is now stunned.");
+
+            AttackDamageStorage.clearIsFirstAttack(attacker);
+            System.out.println(attacker.getName().getString() + "'s first attack has been cleared.");
+
+            float bonusDamage = damage * 0.2f;
+
+            System.out.println(targetEntity.getName().getString() + " will receive " + bonusDamage + " extra damage."
+                    + "\n"
+                    + "This is on top of the " + damage + ". This brings to total damage to " + (damage + bonusDamage));
+
+            return damage + bonusDamage;
+        }
+
+        AttackDamageStorage.clearStoredDamage(attacker);
         return damage;
     }
 }

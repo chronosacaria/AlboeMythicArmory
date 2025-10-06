@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import com.jamieswhiteshirt.reachentityattributes.ReachEntityAttributes;
 import dev.timefall.alboemythicarmory.registry.ItemRegistry;
-import dev.timefall.alboemythicarmory.util.CleanlinessHelper;
+import dev.timefall.alboemythicarmory.util.helper.CleanlinessHelper;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.EquipmentSlot;

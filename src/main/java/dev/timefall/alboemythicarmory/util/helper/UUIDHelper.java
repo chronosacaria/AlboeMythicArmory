@@ -1,4 +1,4 @@
-package dev.timefall.alboemythicarmory.util;
+package dev.timefall.alboemythicarmory.util.helper;
 
 import java.util.UUID;
 

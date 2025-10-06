@@ -1,4 +1,4 @@
-package dev.timefall.alboemythicarmory.util;
+package dev.timefall.alboemythicarmory.util.helper;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -17,7 +17,7 @@ import java.text.DecimalFormat;
 import java.util.List;
 
 public class CleanlinessHelper {
-    private static final Random RANDOM = Random.create();
+    public static final Random RANDOM = Random.create();
 
     /*
      * TOOLTIP HELPER METHODS
@@ -38,7 +38,7 @@ public class CleanlinessHelper {
                     // Divine Effect Name
                     tooltip.add(
                             Text.translatable(base + "_divine_effect.name_" + effectNumber)
-                                    .setStyle(AlboeMythicArmoryStyles.DIVINE_EFFECT.get()));
+                                    .setStyle(AlboeMythicArmoryStylesHelper.DIVINE_EFFECT.get()));
 
                     // Divine Effect Descriptions
                     for (int descriptionNumber = 1;
@@ -47,7 +47,7 @@ public class CleanlinessHelper {
                             alboe_mystic_armory$addLangMultiline(
                                     tooltip,
                                     base + "_divine_effect.name_" + effectNumber + ".description_" + descriptionNumber,
-                                    AlboeMythicArmoryStyles.TOOLTIP.get());
+                                    AlboeMythicArmoryStylesHelper.TOOLTIP.get());
                     }
             }
 
@@ -60,7 +60,7 @@ public class CleanlinessHelper {
                 alboe_mystic_armory$addLangMultiline(
                         tooltip,
                         base + "_" + line,
-                        AlboeMythicArmoryStyles.TOOLTIP.get()
+                        AlboeMythicArmoryStylesHelper.TOOLTIP.get()
                 );
             }
         }

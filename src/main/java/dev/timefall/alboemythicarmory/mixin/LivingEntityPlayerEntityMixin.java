@@ -2,7 +2,7 @@ package dev.timefall.alboemythicarmory.mixin;
 
 import dev.timefall.alboemythicarmory.item.effect.AlboeWeaponEffects;
 import dev.timefall.alboemythicarmory.registry.ItemRegistry;
-import dev.timefall.alboemythicarmory.util.AttackDamageStorage;
+import dev.timefall.alboemythicarmory.util.statemanager.AttackDamageStorage;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EquipmentSlot;
@@ -17,8 +17,8 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin({LivingEntity.class, PlayerEntity.class})
-public abstract class LivingEntityMixin extends Entity {
-    public LivingEntityMixin(EntityType<?> type, World world) {
+public abstract class LivingEntityPlayerEntityMixin extends Entity {
+    public LivingEntityPlayerEntityMixin(EntityType<?> type, World world) {
         super(type, world);
     }
 
@@ -48,6 +48,14 @@ public abstract class LivingEntityMixin extends Entity {
     public float damage(float damage, DamageSource damageSource) {
         if (this.getWorld().isClient()) return damage;
         LivingEntity targetEntity = (LivingEntity) (Object) this;
-        return AlboeWeaponEffects.alboe_mystic_armory$echoEdgeStoredDamage(damageSource, damage, targetEntity);
+        if (damageSource.getAttacker() instanceof LivingEntity attackingEntity) {
+            if (attackingEntity.getEquippedStack(EquipmentSlot.MAINHAND).isOf(ItemRegistry.ECHO_EDGE.get()))
+                return AlboeWeaponEffects.alboe_mystic_armory$echoEdgeStoredDamage(damageSource, damage, targetEntity);
+            if (attackingEntity.getEquippedStack(EquipmentSlot.MAINHAND).isOf(ItemRegistry.IRONFANG.get())) {
+                return AlboeWeaponEffects.handleIronfangAttack(damageSource, damage, targetEntity);
+            }
+        }
+        return damage;
     }
+
 }

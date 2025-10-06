@@ -1,7 +1,7 @@
 package dev.timefall.alboemythicarmory.item;
 
-import dev.timefall.alboemythicarmory.util.AlboeMythicArmoryStyles;
-import dev.timefall.alboemythicarmory.util.CleanlinessHelper;
+import dev.timefall.alboemythicarmory.util.helper.AlboeMythicArmoryStylesHelper;
+import dev.timefall.alboemythicarmory.util.helper.CleanlinessHelper;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -19,7 +19,7 @@ public class DivinityShrapnelItem extends Item {
     @Override
     public Text getName(ItemStack stack) {
         return Text.translatable(this.getTranslationKey(stack))
-                .setStyle(AlboeMythicArmoryStyles.DIVINE_NAME.get());
+                .setStyle(AlboeMythicArmoryStylesHelper.DIVINE_NAME.get());
     }
 
     @Override

@@ -4,7 +4,7 @@ import dev.timefall.alboemythicarmory.ModConstants;
 import dev.timefall.alboemythicarmory.item.material.AlboeToolMaterials;
 import dev.timefall.alboemythicarmory.item.AlboeWeaponItem;
 import dev.timefall.alboemythicarmory.item.DivinityShrapnelItem;
-import dev.timefall.alboemythicarmory.util.CleanlinessHelper;
+import dev.timefall.alboemythicarmory.util.helper.CleanlinessHelper;
 import me.fzzyhmstrs.fzzy_config.api.ConfigApiJava;
 import me.fzzyhmstrs.fzzy_config.util.platform.Registrar;
 import me.fzzyhmstrs.fzzy_config.util.platform.RegistrySupplier;
@@ -95,6 +95,7 @@ public class ItemRegistry {
     }
 
     public static void register() {
+        ModConstants.LOGGER.info("Initializing Items from " + ModConstants.MOD_NAME);
         ITEM.init();
     }
 }

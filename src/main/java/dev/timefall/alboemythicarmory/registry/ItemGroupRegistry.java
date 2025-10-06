@@ -12,6 +12,7 @@ public class ItemGroupRegistry {
     private static final Registrar<ItemGroup> ITEM_GROUP = ConfigApiJava.platform().createRegistrar(ModConstants.MOD_ID, Registries.ITEM_GROUP);
 
     public static void register() {
+        ModConstants.LOGGER.info("Initializing Item Groups from " + ModConstants.MOD_NAME);
         ITEM_GROUP.init();
         ITEM_GROUP.register(
                 "weapons",
