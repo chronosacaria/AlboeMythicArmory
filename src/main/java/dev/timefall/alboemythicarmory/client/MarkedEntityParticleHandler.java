@@ -13,7 +13,7 @@ import net.minecraft.particle.ParticleTypes;
 @Environment(EnvType.CLIENT)
 public class MarkedEntityParticleHandler {
     
-    static void onClientTick(ClientWorld world) {
+    public static void onClientTick(ClientWorld world) {
         if (MinecraftClient.getInstance().isPaused()) return;
         if (world.getTime() % 2 != 0) return;
         for (Entity entity : world.getEntities()) {

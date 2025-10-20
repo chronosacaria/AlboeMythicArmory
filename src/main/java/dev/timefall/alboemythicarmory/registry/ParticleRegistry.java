@@ -1,8 +1,8 @@
 package dev.timefall.alboemythicarmory.registry;
 
 import dev.timefall.alboemythicarmory.ModConstants;
-import dev.timefall.alboemythicarmory.particle.MarkedParticle;
-import dev.timefall.alboemythicarmory.particle.StunnedParticle;
+import dev.timefall.alboemythicarmory.client.particle.ParticleProfile;
+import dev.timefall.alboemythicarmory.client.particle.ProfiledParticleFactory;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
@@ -26,7 +26,21 @@ public class ParticleRegistry {
 
     @Environment(EnvType.CLIENT)
     public static void registerClient() {
-        ParticleFactoryRegistry.getInstance().register(MARKED, MarkedParticle.Factory::new);
-        ParticleFactoryRegistry.getInstance().register(STUNNED, StunnedParticle.Factory::new);
+        ParticleFactoryRegistry.getInstance().register(
+                MARKED,
+                sprites ->
+                        new ProfiledParticleFactory(
+                                sprites,
+                                ParticleProfile.MARKED
+                        )
+        );
+        ParticleFactoryRegistry.getInstance().register(
+                STUNNED,
+                sprites ->
+                        new ProfiledParticleFactory(
+                                sprites,
+                                ParticleProfile.STUNNED
+                        )
+        );
     }
 }

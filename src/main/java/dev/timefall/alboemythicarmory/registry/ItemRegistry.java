@@ -1,9 +1,9 @@
 package dev.timefall.alboemythicarmory.registry;
 
 import dev.timefall.alboemythicarmory.ModConstants;
-import dev.timefall.alboemythicarmory.item.material.AlboeToolMaterials;
 import dev.timefall.alboemythicarmory.item.AlboeWeaponItem;
 import dev.timefall.alboemythicarmory.item.DivinityShrapnelItem;
+import dev.timefall.alboemythicarmory.item.material.AlboeToolMaterials;
 import dev.timefall.alboemythicarmory.util.helper.CleanlinessHelper;
 import me.fzzyhmstrs.fzzy_config.api.ConfigApiJava;
 import me.fzzyhmstrs.fzzy_config.util.platform.Registrar;

@@ -6,7 +6,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.TypedActionResult;
 
-public class StunEventHandler {
+public class ServerEventHandler {
     public static void register() {
         UseEntityCallback.EVENT.register(((player, world, hand, entity, entityHitResult) -> {
             if (player.hasStatusEffect(StatusEffectsRegistry.STUNNED.value())) return ActionResult.FAIL;
