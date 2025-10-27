@@ -31,117 +31,89 @@ public class AlboeWeaponEffects {
                 && entityAttributeInstance != null) {
             entityAttributeInstance.removeModifier(SHADOWFANG_SPEED_BOOST);
         }
-        if (entityAttributeInstance.getModifier(SHADOWFANG_SPEED_BOOST.getId()) == null
+        if (entityAttributeInstance != null
+                && entityAttributeInstance.getModifier(SHADOWFANG_SPEED_BOOST.getId()) == null
                 && livingEntity.getMainHandStack().isOf(ItemRegistry.SHADOWFANG.get().asItem())) {
             entityAttributeInstance.addTemporaryModifier(SHADOWFANG_SPEED_BOOST);
         }
     }
-    public static void alboe_mystic_armory$sunwroughtBladeHealingInSunlight(LivingEntity livingEntity) {
+    public static void alboe_mystic_armory$healInSunlight(LivingEntity livingEntity) {
         if (livingEntity instanceof PlayerEntity playerEntity && playerEntity.isCreative()) return;
-        if (livingEntity.getEquippedStack(EquipmentSlot.MAINHAND).isOf(ItemRegistry.SUNWROUGHT_BLADE.get())
-                && livingEntity.getEntityWorld().isSkyVisibleAllowingSea(livingEntity.getBlockPos())
-                && livingEntity.getEntityWorld().isDay()
-                && !livingEntity.getEntityWorld().isRaining()
-                && !livingEntity.getEntityWorld().isThundering()
+        if (alboe_mystic_armory$isInSunlight(livingEntity)
                 && livingEntity.getHealth() != livingEntity.getMaxHealth()
                 && livingEntity.getEntityWorld().getTime()
                     % CleanlinessHelper.alboe_mystic_armory$calculateTicksFromSeconds(10) == 0)
             livingEntity.heal(0.5F);
     }
-    public static void alboe_mystic_armory$emberbladeIgnition(DamageSource damageSource, LivingEntity targetEntity) {
-        if (damageSource.getSource() instanceof LivingEntity attackingEntity
-                && attackingEntity.getEquippedStack(EquipmentSlot.MAINHAND).isOf(ItemRegistry.EMBERBRAND.get())) {
-            if (CleanlinessHelper.percentToOccur(25))
-                targetEntity.setOnFireFor(2);
-        }
+
+    static boolean alboe_mystic_armory$isInSunlight(LivingEntity livingEntity) {
+        return livingEntity.getEntityWorld().isSkyVisibleAllowingSea(livingEntity.getBlockPos())
+                && livingEntity.getEntityWorld().isDay()
+                && !livingEntity.getEntityWorld().isRaining()
+                && !livingEntity.getEntityWorld().isThundering();
     }
-    public static void alboe_mystic_armory$obsidianSliverExtraDamageWithArmor(DamageSource damageSource, float amount, LivingEntity targetEntity) {
-        if (damageSource.getSource() instanceof LivingEntity attackingEntity
-                && attackingEntity.getEquippedStack(EquipmentSlot.MAINHAND).isOf(ItemRegistry.OBSIDIAN_SLIVER.get())) {
-            if (CleanlinessHelper.hasAnyArmorEquipped(targetEntity)) {
-                targetEntity.damage(damageSource, amount + 1.0f);
-            }
-        }
+
+
+    public static void alboe_mystic_armory$chanceToIgniteEntity(LivingEntity targetEntity, int timeInSeconds, int chance) {
+        if (CleanlinessHelper.percentToOccur(chance))
+                targetEntity.setOnFireFor(timeInSeconds);
     }
-    public static void alboe_mystic_armory$stormbiteSpeedFromAttack(DamageSource damageSource, float amount) {
-        if (damageSource.getSource() instanceof LivingEntity attackingEntity
-                && attackingEntity.getEquippedStack(EquipmentSlot.MAINHAND).isOf(ItemRegistry.STORMBITE.get())) {
-            if (amount > 0.0F) {
-                attackingEntity.addStatusEffect(
-                        new StatusEffectInstance(
-                                StatusEffects.SPEED,
-                                CleanlinessHelper.alboe_mystic_armory$calculateTicksFromSeconds(3)
-                        )
-                );
-            }
-        }
+    public static void alboe_mystic_armory$extraDamageWhenArmored(DamageSource damageSource, float amount, float extraArmoredDamage, LivingEntity targetEntity) {
+        if (CleanlinessHelper.hasAnyArmorEquipped(targetEntity))
+                targetEntity.damage(damageSource, amount + extraArmoredDamage);
     }
-    public static float alboe_mystic_armory$echoEdgeStoredDamage(DamageSource damageSource, float damage, LivingEntity targetEntity) {
+    public static void alboe_mystic_armory$receiveSpeedFromAttack(LivingEntity attackingEntity, int timeInSeconds) {
+        attackingEntity.addStatusEffect(
+                new StatusEffectInstance(
+                        StatusEffects.SPEED,
+                        CleanlinessHelper.alboe_mystic_armory$calculateTicksFromSeconds(timeInSeconds)
+                )
+        );
+    }
+    public static float alboe_mystic_armory$storedDamage(DamageSource damageSource, float damage) {
         if (!(damageSource.getAttacker() instanceof LivingEntity attackingEntity)) return damage;
 
-        if (attackingEntity.getEquippedStack(EquipmentSlot.MAINHAND).isOf(ItemRegistry.ECHO_EDGE.get())) {
-            if (!AttackDamageStorage.isFirstAttack(attackingEntity)) {
-                float storedDamage = AttackDamageStorage.getLastStoredAmount(attackingEntity);
-                boolean hasStoredDamage = storedDamage > 0.0F;
-
-                if (hasStoredDamage) {
-                    AttackDamageStorage.clearStoredDamage(attackingEntity);
-                    damage += storedDamage;
-                }
+        if (!AttackDamageStorage.isFirstAttack(attackingEntity)) {
+            float storedDamage = AttackDamageStorage.getLastStoredAmount(attackingEntity);
+            boolean hasStoredDamage = storedDamage > 0.0F;
+            if (hasStoredDamage) {
+                AttackDamageStorage.clearStoredDamage(attackingEntity);
+                damage += storedDamage;
             }
-
-            if (damage > 0.0F) {
-                float damageToStore = damage * 0.25f;
-                AttackDamageStorage.storeDamage(attackingEntity, damageToStore);
-            }
-
-            return damage;
         }
-
+        if (damage > 0.0F) {
+            float damageToStore = damage * 0.25f;
+            AttackDamageStorage.storeDamage(attackingEntity, damageToStore);
+        }
         return damage;
     }
 
+    public static float alboe_mystic_armory$wetDamage(DamageSource damageSource, float damage, float additionalWetDamage) {
+        if (!(damageSource.getAttacker() instanceof LivingEntity attackingEntity)) return damage;
+        if (!attackingEntity.isWet()) return damage;
+
+        return damage + additionalWetDamage;
+    }
+
     public static float handleIronfangAttack(DamageSource damageSource, float damage, LivingEntity targetEntity) {
-        /* TODO Break out checks for the Ironfang attack into smaller pieces for easy editing later
-         *  Section 1: Mark Entity Logic
-         *  Section 2: Stun Entity Logic
-         *  Section 3: Clear Stored Values
-         *  *** Make sure to remove Debugging Outputs ***
-         */
 
-
-        if (!(damageSource.getAttacker() instanceof LivingEntity attacker)) {
-            return damage;
-        }
-
-        if (!attacker.getEquippedStack(EquipmentSlot.MAINHAND).isOf(ItemRegistry.IRONFANG.get())) {
-            return damage;
-        }
+        if (!(damageSource.getAttacker() instanceof LivingEntity attacker)) return damage;
+        if (!attacker.getEquippedStack(EquipmentSlot.MAINHAND).isOf(ItemRegistry.IRONFANG.get())) return damage;
 
         if (AttackDamageStorage.isFirstAttack(attacker)) {
-            if (!EntityEffectHelper.isEntityMarked(targetEntity)) {
+            if (!EntityEffectHelper.isEntityMarked(targetEntity))
                 EntityEffectHelper.markEntity(targetEntity, 100);
-                System.out.println("Marked " + targetEntity.getName().getString() + " for stun");
-            }
             AttackDamageStorage.storeDamage(attacker, 0);
             return damage;
         }
 
         if (EntityEffectHelper.isEntityMarked(targetEntity)) {
             EntityEffectHelper.unmarkEntity(targetEntity);
-            System.out.println(targetEntity.getName().getString() + " is no longer marked.");
             EntityEffectHelper.stunEntity(targetEntity, 60);
-            System.out.println(targetEntity.getName().getString() + " is now stunned.");
 
             AttackDamageStorage.clearIsFirstAttack(attacker);
-            System.out.println(attacker.getName().getString() + "'s first attack has been cleared.");
 
             float bonusDamage = damage * 0.2f;
-
-            System.out.println(targetEntity.getName().getString() + " will receive " + bonusDamage + " extra damage."
-                    + "\n"
-                    + "This is on top of the " + damage + ". This brings to total damage to " + (damage + bonusDamage));
-
             return damage + bonusDamage;
         }
 

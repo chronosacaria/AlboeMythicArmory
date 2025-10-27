@@ -32,16 +32,24 @@ public abstract class LivingEntityPlayerEntityMixin extends Entity {
     @Inject(method = "tickMovement", at = @At("TAIL"))
     public void tickMovement(CallbackInfo ci) {
         LivingEntity livingEntity = (LivingEntity) (Object) this;
+        if (livingEntity.getEquippedStack(EquipmentSlot.MAINHAND).isOf(ItemRegistry.SUNWROUGHT_BLADE.get()))
+            AlboeWeaponEffects.alboe_mystic_armory$healInSunlight(livingEntity);
         AlboeWeaponEffects.alboe_mythic_armory$shadowfangDarknessMovement(livingEntity);
-        AlboeWeaponEffects.alboe_mystic_armory$sunwroughtBladeHealingInSunlight(livingEntity);
     }
 
     @Inject(method = "applyDamage(Lnet/minecraft/entity/damage/DamageSource;F)V", at = @At("HEAD"))
     public void applyDamage(DamageSource damageSource, float f, CallbackInfo ci) {
+        if (f > 0.0F) return;
         LivingEntity targetEntity = (LivingEntity) (Object) this;
-        AlboeWeaponEffects.alboe_mystic_armory$emberbladeIgnition(damageSource, targetEntity);
-        AlboeWeaponEffects.alboe_mystic_armory$obsidianSliverExtraDamageWithArmor(damageSource, f, targetEntity);
-        AlboeWeaponEffects.alboe_mystic_armory$stormbiteSpeedFromAttack(damageSource, f);
+        Entity sourceEntity = damageSource.getSource();
+        if (sourceEntity instanceof LivingEntity attackingEntity) {
+            if (attackingEntity.getEquippedStack(EquipmentSlot.MAINHAND).isOf(ItemRegistry.EMBERBRAND.get()))
+                AlboeWeaponEffects.alboe_mystic_armory$chanceToIgniteEntity(targetEntity, 2, 25);
+            if (attackingEntity.getEquippedStack(EquipmentSlot.MAINHAND).isOf(ItemRegistry.OBSIDIAN_SLIVER.get()))
+                AlboeWeaponEffects.alboe_mystic_armory$extraDamageWhenArmored(damageSource, f, 1.0F, targetEntity);
+            if (attackingEntity.getEquippedStack(EquipmentSlot.MAINHAND).isOf(ItemRegistry.STORMBITE.get()))
+                AlboeWeaponEffects.alboe_mystic_armory$receiveSpeedFromAttack(attackingEntity, 3);
+        }
     }
 
     @ModifyVariable(method = "damage", at = @At("HEAD"), argsOnly = true)
@@ -50,10 +58,11 @@ public abstract class LivingEntityPlayerEntityMixin extends Entity {
         LivingEntity targetEntity = (LivingEntity) (Object) this;
         if (damageSource.getAttacker() instanceof LivingEntity attackingEntity) {
             if (attackingEntity.getEquippedStack(EquipmentSlot.MAINHAND).isOf(ItemRegistry.ECHO_EDGE.get()))
-                return AlboeWeaponEffects.alboe_mystic_armory$echoEdgeStoredDamage(damageSource, damage, targetEntity);
-            if (attackingEntity.getEquippedStack(EquipmentSlot.MAINHAND).isOf(ItemRegistry.IRONFANG.get())) {
+                return AlboeWeaponEffects.alboe_mystic_armory$storedDamage(damageSource, damage);
+            if (attackingEntity.getEquippedStack(EquipmentSlot.MAINHAND).isOf(ItemRegistry.IRONFANG.get()))
                 return AlboeWeaponEffects.handleIronfangAttack(damageSource, damage, targetEntity);
-            }
+            if (attackingEntity.getEquippedStack(EquipmentSlot.MAINHAND).isOf(ItemRegistry.TIDEPIERCER.get()))
+                return AlboeWeaponEffects.alboe_mystic_armory$wetDamage(damageSource, damage, 2.0F);
         }
         return damage;
     }
