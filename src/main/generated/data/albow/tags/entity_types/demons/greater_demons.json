@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "albom:pit_fiend",
+      "required": false
+    },
+    {
+      "id": "albom:hellfire_sorcerer",
+      "required": false
+    },
+    {
+      "id": "albom:abyssal_behemoth",
+      "required": false
+    }
+  ]
+}

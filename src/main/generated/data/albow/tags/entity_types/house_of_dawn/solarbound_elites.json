@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "albom:solarbound_knight",
+      "required": false
+    },
+    {
+      "id": "albom:sun_touched_champion",
+      "required": false
+    }
+  ]
+}

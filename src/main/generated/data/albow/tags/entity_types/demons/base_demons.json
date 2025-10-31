@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "albom:demon_brute",
+      "required": false
+    },
+    {
+      "id": "albom:hell_warrior",
+      "required": false
+    },
+    {
+      "id": "albom:succubus",
+      "required": false
+    },
+    {
+      "id": "albom:incubus",
+      "required": false
+    }
+  ]
+}

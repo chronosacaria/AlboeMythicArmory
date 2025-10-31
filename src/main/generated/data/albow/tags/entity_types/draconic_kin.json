@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "albom:wyvern",
+      "required": false
+    },
+    {
+      "id": "albom:wyrm",
+      "required": false
+    },
+    {
+      "id": "albom:hydra",
+      "required": false
+    }
+  ]
+}

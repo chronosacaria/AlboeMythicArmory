@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "albom:elf_mage",
+      "required": false
+    },
+    {
+      "id": "albom:elf_seer",
+      "required": false
+    },
+    {
+      "id": "albom:elf_swordmaster",
+      "required": false
+    }
+  ]
+}

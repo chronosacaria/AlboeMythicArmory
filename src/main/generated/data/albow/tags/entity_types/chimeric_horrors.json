@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "albom:manticore",
+      "required": false
+    },
+    {
+      "id": "albom:basilisk",
+      "required": false
+    },
+    {
+      "id": "albom:cockatrice",
+      "required": false
+    },
+    {
+      "id": "albom:chimera",
+      "required": false
+    }
+  ]
+}

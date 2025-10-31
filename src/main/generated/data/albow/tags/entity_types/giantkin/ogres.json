@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "albom:ogre_brute",
+      "required": false
+    }
+  ]
+}

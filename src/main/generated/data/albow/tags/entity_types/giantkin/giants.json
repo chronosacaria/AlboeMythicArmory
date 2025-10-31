@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "albom:giant_fire",
+      "required": false
+    },
+    {
+      "id": "albom:giant_frost",
+      "required": false
+    },
+    {
+      "id": "albom:giant_hill",
+      "required": false
+    }
+  ]
+}

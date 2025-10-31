@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "albom:direwolf",
+      "required": false
+    },
+    {
+      "id": "albom:forest_stalker",
+      "required": false
+    },
+    {
+      "id": "albom:shadow_wolf",
+      "required": false
+    }
+  ]
+}

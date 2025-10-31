@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "albom:shadowblade_assassin",
+      "required": false
+    },
+    {
+      "id": "albom:warlock_of_the_veil",
+      "required": false
+    },
+    {
+      "id": "albom:spider_matriarch",
+      "required": false
+    }
+  ]
+}

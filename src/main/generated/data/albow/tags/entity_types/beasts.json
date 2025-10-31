@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "minecraft:hoglin",
+      "required": false
+    },
+    {
+      "id": "minecraft:ravager",
+      "required": false
+    },
+    {
+      "id": "minecraft:strider",
+      "required": false
+    },
+    {
+      "id": "minecraft:zoglin",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "albom:ward_earth",
+      "required": false
+    },
+    {
+      "id": "albom:ward_fire",
+      "required": false
+    },
+    {
+      "id": "albom:ward_water",
+      "required": false
+    },
+    {
+      "id": "albom:ward_wind",
+      "required": false
+    }
+  ]
+}

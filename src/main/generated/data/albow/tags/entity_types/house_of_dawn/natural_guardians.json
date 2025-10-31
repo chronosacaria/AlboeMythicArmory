@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "albom:dawn_sentinel",
+      "required": false
+    },
+    {
+      "id": "albom:dryad",
+      "required": false
+    },
+    {
+      "id": "albom:grove_protector",
+      "required": false
+    }
+  ]
+}

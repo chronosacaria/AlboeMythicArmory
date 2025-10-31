@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "albom:elf_archer",
+      "required": false
+    },
+    {
+      "id": "albom:elf_druid",
+      "required": false
+    },
+    {
+      "id": "albom:elf_scout",
+      "required": false
+    }
+  ]
+}

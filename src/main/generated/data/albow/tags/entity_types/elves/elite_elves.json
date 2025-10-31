@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "albom:archmage_of_the_moon",
+      "required": false
+    },
+    {
+      "id": "albom:elf_bladedancer_champion",
+      "required": false
+    },
+    {
+      "id": "albom:elf_high_warden",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "albom:dwarven_footman",
+      "required": false
+    },
+    {
+      "id": "albom:dwarven_crossbowman",
+      "required": false
+    },
+    {
+      "id": "albom:dwarven_defender",
+      "required": false
+    }
+  ]
+}

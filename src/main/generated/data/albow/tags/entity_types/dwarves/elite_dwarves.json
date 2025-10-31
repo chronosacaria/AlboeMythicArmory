@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "albom:dwarven_rune_priest",
+      "required": false
+    },
+    {
+      "id": "albom:dwarven_berserker",
+      "required": false
+    },
+    {
+      "id": "albom:dwarven_king",
+      "required": false
+    },
+    {
+      "id": "albom:stoneforged_golem",
+      "required": false
+    }
+  ]
+}

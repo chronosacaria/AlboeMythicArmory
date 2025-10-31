@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "albom:occult_initiate",
+      "required": false
+    },
+    {
+      "id": "albom:occult_priest",
+      "required": false
+    },
+    {
+      "id": "albom:occult_summoner",
+      "required": false
+    }
+  ]
+}

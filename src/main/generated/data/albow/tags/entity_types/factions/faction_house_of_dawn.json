@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#albow:house_of_dawn/natural_guardians",
+      "required": false
+    },
+    {
+      "id": "#albow:house_of_dawn/elemental_spirits",
+      "required": false
+    },
+    {
+      "id": "#albow:house_of_dawn/solarbound_elites",
+      "required": false
+    }
+  ]
+}

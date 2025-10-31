@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "albom:goblin_youngling",
+      "required": false
+    },
+    {
+      "id": "albom:goblin_common",
+      "required": false
+    }
+  ]
+}

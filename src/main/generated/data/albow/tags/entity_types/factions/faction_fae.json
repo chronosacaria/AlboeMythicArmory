@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#albow:fae/lesser_fae",
+      "required": false
+    },
+    {
+      "id": "#albow:fae/forest_spirits",
+      "required": false
+    },
+    {
+      "id": "#albow:fae/greater_fae",
+      "required": false
+    }
+  ]
+}

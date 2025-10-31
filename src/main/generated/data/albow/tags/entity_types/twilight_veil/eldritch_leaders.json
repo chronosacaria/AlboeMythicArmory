@@ -1,0 +1,25 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "albom:occult_magus",
+      "required": false
+    },
+    {
+      "id": "albom:revenant_knight",
+      "required": false
+    },
+    {
+      "id": "albom:star_spawned_horror",
+      "required": false
+    },
+    {
+      "id": "albom:twilight_warlock",
+      "required": false
+    },
+    {
+      "id": "albom:twilight_witch",
+      "required": false
+    }
+  ]
+}

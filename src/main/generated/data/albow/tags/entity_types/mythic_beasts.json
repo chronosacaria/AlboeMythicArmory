@@ -1,0 +1,49 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "albom:centaur",
+      "required": false
+    },
+    {
+      "id": "albom:glacier_serpent",
+      "required": false
+    },
+    {
+      "id": "albom:ice_crawler",
+      "required": false
+    },
+    {
+      "id": "albom:icebound_golem",
+      "required": false
+    },
+    {
+      "id": "albom:sand_wraith",
+      "required": false
+    },
+    {
+      "id": "albom:sand_wyrm",
+      "required": false
+    },
+    {
+      "id": "albom:scarab",
+      "required": false
+    },
+    {
+      "id": "albom:siren",
+      "required": false
+    },
+    {
+      "id": "albom:snow_stag",
+      "required": false
+    },
+    {
+      "id": "albom:treant",
+      "required": false
+    },
+    {
+      "id": "albom:unicorn",
+      "required": false
+    }
+  ]
+}

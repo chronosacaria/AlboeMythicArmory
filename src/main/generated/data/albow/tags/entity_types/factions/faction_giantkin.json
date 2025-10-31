@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#albow:giantkin/giants",
+      "required": false
+    },
+    {
+      "id": "#albow:giantkin/ogres",
+      "required": false
+    },
+    {
+      "id": "#albow:giantkin/trolls",
+      "required": false
+    }
+  ]
+}

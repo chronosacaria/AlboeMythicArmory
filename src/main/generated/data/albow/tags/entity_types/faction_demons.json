@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#albow:goblins/lesser_goblins",
+      "required": false
+    },
+    {
+      "id": "#albow:goblins/base_goblins",
+      "required": false
+    },
+    {
+      "id": "#albow:goblins/elite_goblins",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#albow:dwarves/clansfolk_dwarves",
+      "required": false
+    },
+    {
+      "id": "#albow:dwarves/warrior_dwarves",
+      "required": false
+    },
+    {
+      "id": "#albow:dwarves/elite_dwarves",
+      "required": false
+    }
+  ]
+}

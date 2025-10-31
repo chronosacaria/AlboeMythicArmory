@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "albom:thunderbird",
+      "required": false
+    },
+    {
+      "id": "albom:roc",
+      "required": false
+    },
+    {
+      "id": "albom:phoenix",
+      "required": false
+    },
+    {
+      "id": "albom:harpy",
+      "required": false
+    }
+  ]
+}

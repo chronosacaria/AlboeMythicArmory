@@ -1,0 +1,29 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "albom:goblin_archer",
+      "required": false
+    },
+    {
+      "id": "albom:goblin_bomber",
+      "required": false
+    },
+    {
+      "id": "albom:goblin_grunt",
+      "required": false
+    },
+    {
+      "id": "albom:goblin_scout",
+      "required": false
+    },
+    {
+      "id": "albom:goblin_shaman",
+      "required": false
+    },
+    {
+      "id": "albom:goblin_rider",
+      "required": false
+    }
+  ]
+}

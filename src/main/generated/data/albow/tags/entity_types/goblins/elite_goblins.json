@@ -1,0 +1,25 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "albom:hobgoblin_soldier",
+      "required": false
+    },
+    {
+      "id": "albom:hobgoblin_sergeant",
+      "required": false
+    },
+    {
+      "id": "albom:hobgoblin_warcaster",
+      "required": false
+    },
+    {
+      "id": "albom:hobgoblin_brute",
+      "required": false
+    },
+    {
+      "id": "albom:goblin_king",
+      "required": false
+    }
+  ]
+}

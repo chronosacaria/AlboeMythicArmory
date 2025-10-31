@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "albom:bandit_grunt",
+      "required": false
+    },
+    {
+      "id": "albom:bandit_raider",
+      "required": false
+    },
+    {
+      "id": "albom:bandit_captain",
+      "required": false
+    },
+    {
+      "id": "albom:outlaw_huntsman",
+      "required": false
+    }
+  ]
+}

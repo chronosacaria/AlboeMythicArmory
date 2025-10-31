@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "albom:troll_cave",
+      "required": false
+    },
+    {
+      "id": "albom:troll_mountain",
+      "required": false
+    }
+  ]
+}

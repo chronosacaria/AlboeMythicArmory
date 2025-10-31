@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "albom:fairy",
+      "required": false
+    },
+    {
+      "id": "albom:pixie",
+      "required": false
+    },
+    {
+      "id": "albom:sprite",
+      "required": false
+    }
+  ]
+}

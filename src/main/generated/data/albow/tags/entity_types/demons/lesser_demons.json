@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "albom:imp",
+      "required": false
+    },
+    {
+      "id": "albom:fiendling",
+      "required": false
+    },
+    {
+      "id": "albom:hell_hound",
+      "required": false
+    }
+  ]
+}

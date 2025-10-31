@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "albom:sidhe_noble",
+      "required": false
+    },
+    {
+      "id": "albom:faerie_queen_knight",
+      "required": false
+    },
+    {
+      "id": "albom:changeling_trickster",
+      "required": false
+    },
+    {
+      "id": "albom:faerie_queen",
+      "required": false
+    }
+  ]
+}

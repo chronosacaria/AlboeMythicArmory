@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "albom:sea_serpent",
+      "required": false
+    },
+    {
+      "id": "albom:abyssal_leviathan",
+      "required": false
+    },
+    {
+      "id": "albom:kraken",
+      "required": false
+    }
+  ]
+}

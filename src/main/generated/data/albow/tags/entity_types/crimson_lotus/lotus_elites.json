@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "albom:crimson_rot_beast",
+      "required": false
+    },
+    {
+      "id": "albom:crimson_rot_champion",
+      "required": false
+    },
+    {
+      "id": "albom:lotus_war_mech",
+      "required": false
+    }
+  ]
+}

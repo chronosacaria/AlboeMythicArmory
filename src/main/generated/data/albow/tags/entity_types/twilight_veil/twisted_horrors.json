@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "albom:flesh_golem",
+      "required": false
+    },
+    {
+      "id": "albom:occult_lich",
+      "required": false
+    },
+    {
+      "id": "albom:revenant",
+      "required": false
+    },
+    {
+      "id": "albom:veil_abomination",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "albom:nymph_earth",
+      "required": false
+    },
+    {
+      "id": "albom:nymph_fire",
+      "required": false
+    },
+    {
+      "id": "albom:nymph_water",
+      "required": false
+    },
+    {
+      "id": "albom:sylph",
+      "required": false
+    },
+    {
+      "id": "albom:satyr",
+      "required": false
+    }
+  ]
+}

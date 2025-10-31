@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "albom:beelzebub",
+      "required": false
+    },
+    {
+      "id": "albom:paimon",
+      "required": false
+    },
+    {
+      "id": "albom:azazel",
+      "required": false
+    },
+    {
+      "id": "albom:demon_king",
+      "required": false
+    }
+  ]
+}

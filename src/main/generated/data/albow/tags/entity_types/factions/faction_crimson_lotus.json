@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#albow:crimson_lotus/lotus_soldiers",
+      "required": false
+    },
+    {
+      "id": "#albow:crimson_lotus/lotus_specialists",
+      "required": false
+    },
+    {
+      "id": "#albow:crimson_lotus/lotus_elites",
+      "required": false
+    }
+  ]
+}

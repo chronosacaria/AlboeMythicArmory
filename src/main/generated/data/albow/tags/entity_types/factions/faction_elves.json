@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#albow:elves/wood_elves",
+      "required": false
+    },
+    {
+      "id": "#albow:elves/high_elves",
+      "required": false
+    },
+    {
+      "id": "#albow:elves/dark_elves",
+      "required": false
+    },
+    {
+      "id": "#albow:elves/elite_elves",
+      "required": false
+    }
+  ]
+}

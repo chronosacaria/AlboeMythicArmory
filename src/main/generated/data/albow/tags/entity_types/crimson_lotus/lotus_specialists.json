@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "albom:lotus_engineer",
+      "required": false
+    },
+    {
+      "id": "albom:lotus_flamethrower",
+      "required": false
+    },
+    {
+      "id": "albom:steam_augmented_enforcer",
+      "required": false
+    }
+  ]
+}

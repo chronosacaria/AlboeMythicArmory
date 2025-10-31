@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#albow:twilight_veil/occult_followers",
+      "required": false
+    },
+    {
+      "id": "#albow:twilight_veil/twisted_horrors",
+      "required": false
+    },
+    {
+      "id": "#albow:twilight_veil/eldritch_leaders",
+      "required": false
+    }
+  ]
+}

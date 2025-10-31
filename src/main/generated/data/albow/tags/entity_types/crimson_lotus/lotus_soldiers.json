@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "albom:lotus_grunt",
+      "required": false
+    },
+    {
+      "id": "albom:lotus_rot_infected_soldier",
+      "required": false
+    },
+    {
+      "id": "albom:lotus_scout",
+      "required": false
+    }
+  ]
+}

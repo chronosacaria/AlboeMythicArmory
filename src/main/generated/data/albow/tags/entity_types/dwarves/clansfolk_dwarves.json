@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "albom:dwarven_miner",
+      "required": false
+    },
+    {
+      "id": "albom:dwarven_blacksmith",
+      "required": false
+    },
+    {
+      "id": "albom:dwarven_trader",
+      "required": false
+    }
+  ]
+}
