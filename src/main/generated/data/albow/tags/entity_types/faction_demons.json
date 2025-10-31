@@ -2,15 +2,19 @@
   "replace": false,
   "values": [
     {
-      "id": "#albow:goblins/lesser_goblins",
+      "id": "#albow:demons/lesser_demons",
       "required": false
     },
     {
-      "id": "#albow:goblins/base_goblins",
+      "id": "#albow:demons/base_demons",
       "required": false
     },
     {
-      "id": "#albow:goblins/elite_goblins",
+      "id": "#albow:demons/greater_demons",
+      "required": false
+    },
+    {
+      "id": "#albow:demons/demonic_lords",
       "required": false
     }
   ]

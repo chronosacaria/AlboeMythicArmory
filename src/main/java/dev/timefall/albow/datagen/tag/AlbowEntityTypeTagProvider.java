@@ -316,9 +316,10 @@ public class AlbowEntityTypeTagProvider extends FabricTagProvider<EntityType<?>>
                 .addOptionalTag(AlbowEntityTypeTagKeys.FAE_FOREST_SPIRITS)
                 .addOptionalTag(AlbowEntityTypeTagKeys.FAE_GREATER);
         getOrCreateTagBuilder(AlbowEntityTypeTagKeys.FACTION_DEMONS)
-                .addOptionalTag(AlbowEntityTypeTagKeys.GOBLINS_LESSER)
-                .addOptionalTag(AlbowEntityTypeTagKeys.GOBLINS_BASE)
-                .addOptionalTag(AlbowEntityTypeTagKeys.GOBLINS_ELITE);
+                .addOptionalTag(AlbowEntityTypeTagKeys.DEMONS_LESSER)
+                .addOptionalTag(AlbowEntityTypeTagKeys.DEMONS_BASE)
+                .addOptionalTag(AlbowEntityTypeTagKeys.DEMONS_GREATER)
+                .addOptionalTag(AlbowEntityTypeTagKeys.DEMONS_DEMONIC_LORDS);
         getOrCreateTagBuilder(AlbowEntityTypeTagKeys.FACTION_GOBLINS)
                 .addOptionalTag(AlbowEntityTypeTagKeys.DEMONS_LESSER)
                 .addOptionalTag(AlbowEntityTypeTagKeys.DEMONS_BASE)
